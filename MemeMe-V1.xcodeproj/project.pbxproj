@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFD261B8200C5068003C91D6 /* SentMemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD261B7200C5068003C91D6 /* SentMemeTableViewController.swift */; };
 		BFFE996F1FFAAF2700A025F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE996E1FFAAF2700A025F4 /* AppDelegate.swift */; };
 		BFFE99711FFAAF2700A025F4 /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE99701FFAAF2700A025F4 /* MemeViewController.swift */; };
 		BFFE99741FFAAF2700A025F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFE99721FFAAF2700A025F4 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFD261B7200C5068003C91D6 /* SentMemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeTableViewController.swift; sourceTree = "<group>"; };
 		BFFE996B1FFAAF2700A025F4 /* MemeMe-V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe-V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFE996E1FFAAF2700A025F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFE99701FFAAF2700A025F4 /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				BFFE99771FFAAF2700A025F4 /* LaunchScreen.storyboard */,
 				BFFE997A1FFAAF2700A025F4 /* Info.plist */,
 				BFFE99801FFABD4500A025F4 /* Meme.swift */,
+				BFD261B7200C5068003C91D6 /* SentMemeTableViewController.swift */,
 			);
 			path = "MemeMe-V1";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				BFFE99811FFABD4500A025F4 /* Meme.swift in Sources */,
 				BFFE99711FFAAF2700A025F4 /* MemeViewController.swift in Sources */,
 				BFFE996F1FFAAF2700A025F4 /* AppDelegate.swift in Sources */,
+				BFD261B8200C5068003C91D6 /* SentMemeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

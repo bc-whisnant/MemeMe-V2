@@ -202,6 +202,10 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!,
                         originalImage: pickedImageView.image!, memedImage: memedImage)
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
 
     //this function allows the return button to dismiss the keyboard
