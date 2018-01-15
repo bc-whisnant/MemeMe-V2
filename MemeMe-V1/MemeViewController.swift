@@ -9,7 +9,7 @@
 import UIKit
 
 class MemeViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate, UITextFieldDelegate {
+UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate {
     
     //declare variables here
     @IBOutlet weak var topTextField: UITextField!
@@ -23,6 +23,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var btmToolBar: UIToolbar!
     
     var memedImage: UIImage?
+    var meme = [Meme]()
+    var memeToBeEdited: Meme?
     
     
     override func viewDidLoad() {
@@ -81,7 +83,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         activityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed:Bool, returnedItems:[Any]?, error: Error?) in
             if completed {
                 self.save() // save the meme
-                activityViewController.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             } else {
                 print("error saving the meme image")
             }

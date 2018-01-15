@@ -59,7 +59,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="WMf-Hg-fk4" id="C7C-f7-El5"/>
+                            <outlet property="dataSource" destination="WMf-Hg-fk4" id="Q98-FV-mU0"/>
                             <outlet property="delegate" destination="WMf-Hg-fk4" id="arY-ZS-fEW"/>
                         </connections>
                     </tableView>
