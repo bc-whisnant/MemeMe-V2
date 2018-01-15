@@ -59,7 +59,7 @@ class SentMemeTableViewController: UITableViewController {
         let controller = storyboard!.instantiateViewController(withIdentifier: "SentMemeTableViewController") as! SentMemeTableViewController
         controller.memeToBeEdited = memes[indexPath.row]
         navigationController!.pushViewController(controller, animated: true)
-        print("did this work?")
+        //print("did this work?")
     }
     
 
