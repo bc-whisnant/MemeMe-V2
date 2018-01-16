@@ -13,6 +13,7 @@ class SentMemeTableViewController: UITableViewController {
     
     // add outlets for table and prototype cell
     @IBOutlet weak var sentMemeTableView: UITableView!
+    @IBOutlet weak var tableAddButton: UIBarButtonItem!
     
     var memes: [Meme]!
     var memeToBeEdited: Meme?
@@ -57,11 +58,26 @@ class SentMemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "SentMemeTableViewController") as! SentMemeTableViewController
+        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
         controller.memeToBeEdited = memes[indexPath.row]
         navigationController!.pushViewController(controller, animated: true)
         //print("did this work?")
     }
     
-
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//                let controller = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+//                controller.memeToBeEdited = memes[indexPath.row]
+//                navigationController!.pushViewController(controller, animated: true)
+//                //print("did this work?")
+//    }
+    
+    @IBAction func tableAddButtonPressed(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
 }

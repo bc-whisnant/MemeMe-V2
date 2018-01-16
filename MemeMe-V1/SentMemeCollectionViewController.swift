@@ -12,17 +12,26 @@ import UIKit
 class SentMemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var sentMemeCollectionView: UICollectionView!
-    //@IBOutlet weak var collectionImage: UIImageView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var collectionAddButton: UIBarButtonItem!
     
     
     var memes: [Meme]!
     var memeToBeEdited: Meme?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-//    collectionView(_:numberOfItemsInSection:) ---> returns number of memes in array
-//    collectionView(_:cellForItemAt:) ---> returns a custom cell
-//    collectionView(_:didSelectItemAt:)
-//
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         //return the number of memes in the array
@@ -60,5 +69,21 @@ class SentMemeCollectionViewController: UICollectionViewController, UICollection
         controller.memeToBeEdited = memes[indexPath.item]
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+//        controller.memeToBeEdited = memes[indexPath.row]
+//        navigationController!.pushViewController(controller, animated: true)
+//        //print("did this work?")
+//    }
+    
+    
+    @IBAction func collectionAddButtonPressed(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    
 
 }

@@ -32,6 +32,9 @@ UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         configure(textField: topTextField, withText: "TOP")
         configure(textField: bottomTextField, withText: "BOTTOM")
+        
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
 
         
     }
@@ -52,6 +55,7 @@ UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate {
             //if any items are nil the share button won't be enabled
             shareButton.isEnabled = false
         }
+        navigationController?.setToolbarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
