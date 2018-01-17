@@ -17,7 +17,7 @@ class MemeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // sets the image property of the detail uiimageview
         pickedImageView.image = memeToBeEdited?.memedImage
         pickedImageView.contentMode = .scaleAspectFit
     }

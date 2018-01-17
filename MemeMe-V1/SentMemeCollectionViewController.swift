@@ -56,7 +56,7 @@ class SentMemeCollectionViewController: UICollectionViewController, UICollection
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
-        // Set the name, image and the correct fit for content
+        // set the name, image and the correct fit for content
         collectionCell.memeImageView.image = meme.memedImage
         collectionCell.collectionImageLabelTop.text = "\(meme.topText)"
         collectionCell.collectionImageLabelBottom.text = "\(meme.bottomText)"
@@ -66,7 +66,7 @@ class SentMemeCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+            //pushes the memedetailviewcontroller on top of current controller
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
             controller.memeToBeEdited = memes[indexPath.item]
             navigationController?.pushViewController(controller, animated: true)
@@ -75,6 +75,7 @@ class SentMemeCollectionViewController: UICollectionViewController, UICollection
     
     
     @IBAction func collectionAddButtonPressed(_ sender: Any) {
+        // shows the memeviewcontroller when the add button is pressed
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
         self.present(controller, animated: true, completion: nil)
     }

@@ -12,7 +12,7 @@ import UIKit
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    
+    // outlets for the collection view cell
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var collectionImageLabelTop: UILabel!
     @IBOutlet weak var collectionImageLabelBottom: UILabel!
