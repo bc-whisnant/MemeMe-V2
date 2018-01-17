@@ -25,11 +25,12 @@ class SentMemeCollectionViewController: UICollectionViewController, UICollection
         super.viewDidLoad()
         
         let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        let dimensionWidth = (view.frame.size.width - (2 * space)) / 3.0
+        let dimensionHeight = (view.frame.size.height - (3 * space)) / 4.0
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        flowLayout.itemSize = CGSize(width: dimensionWidth, height: dimensionHeight)
     }
     
     override func collectionView(_ collectionView: UICollectionView,
@@ -65,17 +66,12 @@ class SentMemeCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SentMemeCollectionViewController") as! SentMemeCollectionViewController
-        controller.memeToBeEdited = memes[indexPath.item]
-        navigationController?.pushViewController(controller, animated: true)
+        
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+            controller.memeToBeEdited = memes[indexPath.item]
+            navigationController?.pushViewController(controller, animated: true)
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-//        controller.memeToBeEdited = memes[indexPath.row]
-//        navigationController!.pushViewController(controller, animated: true)
-//        //print("did this work?")
-//    }
     
     
     @IBAction func collectionAddButtonPressed(_ sender: Any) {

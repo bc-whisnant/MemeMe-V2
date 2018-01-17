@@ -18,8 +18,6 @@ class MemeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.isHidden = true
-        
         pickedImageView.image = memeToBeEdited?.memedImage
         pickedImageView.contentMode = .scaleAspectFit
     }

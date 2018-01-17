@@ -58,18 +58,12 @@ class SentMemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
-        controller.memeToBeEdited = memes[indexPath.row]
-        navigationController!.pushViewController(controller, animated: true)
-        //print("did this work?")
+        
+                let controller = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+                controller.memeToBeEdited = memes[indexPath.row]
+                navigationController!.pushViewController(controller, animated: true)
+                //print("did this work?")
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//                let controller = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-//                controller.memeToBeEdited = memes[indexPath.row]
-//                navigationController!.pushViewController(controller, animated: true)
-//                //print("did this work?")
-//    }
     
     @IBAction func tableAddButtonPressed(_ sender: Any) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
