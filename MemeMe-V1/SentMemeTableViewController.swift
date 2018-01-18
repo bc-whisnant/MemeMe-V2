@@ -13,6 +13,7 @@ class SentMemeTableViewController: UITableViewController {
     
     // add outlets for table and prototype cell
     @IBOutlet weak var sentMemeTableView: UITableView!
+    @IBOutlet weak var tableAddButton: UIBarButtonItem!
     
     var memes: [Meme]!
     var memeToBeEdited: Meme?
@@ -40,6 +41,7 @@ class SentMemeTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         memeLoader()
     }
     
@@ -47,7 +49,7 @@ class SentMemeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemeTableCell")!
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
-        // Set the name, image and the correct fit for content
+        // set the name, image and the correct fit for content
         cell.textLabel?.text = "\(meme.topText) \(meme.bottomText)"
         cell.imageView?.image = meme.memedImage
         cell.imageView?.contentMode = .scaleAspectFit
@@ -56,11 +58,21 @@ class SentMemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "SentMemeTableViewController") as! SentMemeTableViewController
+        //pushes the memedetailviewcontroller on top of current controller
+        let controller = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         controller.memeToBeEdited = memes[indexPath.row]
         navigationController!.pushViewController(controller, animated: true)
-        //print("did this work?")
+        
     }
     
-
+    @IBAction func tableAddButtonPressed(_ sender: Any) {
+        // shows the memeviewcontroller when the add button is pressed
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MemeViewController") as! MemeViewController
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
 }
